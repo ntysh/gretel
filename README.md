@@ -26,5 +26,16 @@ http://163.172.179.174/
 используя наш бот [@hansel_alarm_bot](http://t.me/hansel_alarm_bot) и в случае
 вашего задержания получить информацию об этом.
 
+## Команда и благодарности
+Над ботом работали:
+Natasha Tysh -- bot dev / qa
+Balaram Usov -- backend dev / pm
+Arseniy Shishaev -- frontend dev / sysadmin
+Ivan Semenyuk -- hardware dev
+Alina Yunosova -- film maker
 
+Особая благодарность Алексею Ушаровскому из Оракл, который
+сделал нам приложение на андроид -- смс шлюз, пересылающий
+смски нам на сервер
+https://github.com/usharik/SMSRedirector
 
