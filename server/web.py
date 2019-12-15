@@ -5,7 +5,7 @@ from core import register_user
 
 @app.route('/')
 def hello_world():
-    return 'Hansel alarm button'
+    return render_template('landing.html')
 
 @app.route('/form/')
 def form():
