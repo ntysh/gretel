@@ -3,7 +3,7 @@ import bot
 from threading import Thread
 
 def mainloop():
-    Thread(target=web.app.run).start()
+    Thread(target=web.app.run, kwargs={'host':'0.0.0.0', 'port':80}).start()
     bot.upd.start_polling()
     while True:
         try:
