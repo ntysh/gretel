@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 app = Flask(__name__)
 import os
-
+import json
 import core
 import bot
 
@@ -24,6 +24,9 @@ def register():
 
 @app.route('/alarm/', methods=['POST'])
 def alarm():
+
+    with open('data.json', 'w') as f:
+        f.write(json.dumps(request.json))
     try:
         ud = core.get_user_by_number(request.json['number'])
     except IndexError:
