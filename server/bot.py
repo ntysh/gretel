@@ -34,7 +34,7 @@ def parse_token(update, context):
 
     except IndexError:
         context.bot.send_message(chat_id=update.effective_chat.id,
-                             text="Вы ввели неправильный токен. Попробуйте заново.")
+                             text="Вы ввели неправильный токен. Попробуйте заново, введя команду /subscribe.")
     #else:
         
     return ConversationHandler.END	
