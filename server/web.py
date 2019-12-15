@@ -6,8 +6,13 @@ def hello_world():
     return 'Hansel alarm button'
 
 @app.route('/form/')
-def hello(name=None):
+def form():
     return render_template('form.html')
+
+@app.route('/token/')
+def token():
+    return render_template('token.html')
+
 
 if __name__ == '__main__':
     app.run()
