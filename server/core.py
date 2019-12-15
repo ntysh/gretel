@@ -22,6 +22,8 @@ def subscribe_to_token(shared_token, user_id):
     for ud in users:
         if ud['shared'] == shared_token:
             ud['subscribers'].append(user_id)
+            users_lock.release()
             return
     else:
+        users_lock.release()
         raise IndexError
