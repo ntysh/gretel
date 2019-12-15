@@ -20,3 +20,6 @@ def register():
                            personal_token=personal_token,
                            share_token=share_token)
 
+if __name__ == '__main__':
+    app.run()
+
