@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 app = Flask(__name__)
+import os
 
 from core import register_user
 
@@ -21,5 +22,8 @@ def register():
                            share_token=share_token)
 
 if __name__ == '__main__':
-    app.run()
+    if 'hansel_dev' in os.environ:
+        app.run()
+    else:
+        app.run(host='0.0.0.0', port=80)
 
