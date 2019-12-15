@@ -17,7 +17,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 def send_message_from_alarm(subriber_ids, username):
     for subriber_id in subriber_ids:
-        context.bot.send_message(chat_id=subriber_id,
+        bot.send_message(chat_id=subriber_id,
                              text="{0} в опасности! Попробуйте связаться с ним, и если он вам не ответит, принимайте меры. Телефон ОВД-инфо: Телефон Лиза.Алерт: ".format(username))
     
 

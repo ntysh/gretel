@@ -3,6 +3,7 @@ app = Flask(__name__)
 import os
 
 import core
+import bot
 
 @app.route('/')
 def hello_world():
@@ -27,8 +28,7 @@ def alarm():
         ud = core.get_user_by_number(request.json['number'])
     except IndexError:
         return '', 400
-    #bot.send_alarm(ud['subscribers'])
-    print(ud['subscribers'])
+    bot.send_message_from_alarm(ud['subscribers'], ud['name'])
     return '', 200
 
 
