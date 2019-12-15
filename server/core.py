@@ -27,3 +27,15 @@ def subscribe_to_token(shared_token, user_id):
     else:
         users_lock.release()
         raise IndexError
+
+eq_numbers = lambda num1, num2: num1.rstrip('\n ')[-10:] == num2.rstrip('\n ')[-10:]
+
+def get_user_by_number(number):
+    users_lock.acquire()
+    for ud in users:
+        if eq_numbers(ud['number'], number):
+            users_lock.release()
+            return ud
+    else:
+        users_lock.release()
+        raise IndexError
