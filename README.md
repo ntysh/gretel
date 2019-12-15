@@ -28,11 +28,11 @@ http://163.172.179.174/
 
 ## Команда и благодарности
 Над ботом работали:
-Natasha Tysh -- bot dev / qa
-Balaram Usov -- backend dev / pm
-Arseniy Shishaev -- frontend dev / sysadmin
-Ivan Semenyuk -- hardware dev
-Alina Yunosova -- film maker
+* Natasha Tysh -- bot dev / qa
+* Balaram Usov -- backend dev / pm
+* Arseniy Shishaev -- frontend dev / sysadmin
+* Ivan Semenyuk -- hardware dev
+* Alina Yunosova -- film maker
 
 Особая благодарность Алексею Ушаровскому из Оракл, который
 сделал нам приложение на андроид -- смс шлюз, пересылающий
