@@ -19,7 +19,8 @@
         <div class="row mt-5" style="background: black; height: 3pt;"></div>
         <div class="row mt-2">
 
-            <a href="/" class="h1 fc" style="color: black;">hansel</a><h1 class="fc"> &MediumSpace;-> регистрация</h1>
+            <a href="/" class="h1 fc" style="color: black;">hansel</a>
+            <h1 class="fc"> &MediumSpace;-> регистрация</h1>
         </div>
         <form action="/register/" method="POST">
 
@@ -33,14 +34,30 @@
                 <label for="button_number">Номер кнопки</label>
                 <input type="text" class="form-control" id="button_number" name="button_number">
             </div>
+            <label class="row">Оповестить о сигнале</label>
+            <small id="contactsHelp" class="text-muted row">Мы передадим в эти службы ваш сигнал</small>
+
+            <div class="form-group">
+
+                <div class="form-check row mt-2">
+                    <input class="form-check-input" type="checkbox" value="ovd-info" name=ovd_1 id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">ОВД-Инфо</label>
+                </div>
+                <div class="form-check row">
+                    <input class="form-check-input" type="checkbox" value="doxa_ovd" name=ovd_2 id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">DOXA_OVD</label>
+                </div>
+
+            </div>
 
             <div class="row form-group">
                 <label for="contacts">Контакты близких</label>
                 <textarea class="form-control" id="contacts" rows="3" name="contacts"></textarea>
-                <small id="contactsHelp" class="form-text text-muted">Мы свяжемся с этими людьми, если hansel подаст сигнал</small>
+                <small id="contactsHelp" class="form-text text-muted">Мы свяжемся с этими людьми, если hansel подаст
+                    сигнал</small>
             </div>
             <div class="row mt-4">
-                    <button type="submit" class="btn btn-dark">Отправить</button>
+                <button type="submit" class="btn btn-dark">Отправить</button>
             </div>
 
         </form>
