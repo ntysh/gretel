@@ -3,7 +3,7 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Conve
 from telegram import Bot, ReplyKeyboardMarkup, KeyboardButton
 from telegram.utils.request import Request
 
-import config, core
+import config
 
 req = Request(proxy_url=config.proxy)
 bot = Bot(config.token, request=req)
@@ -14,54 +14,15 @@ dp = upd.dispatcher
 import logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                      level=logging.INFO)
-
-def send_message_from_alarm(subriber_ids, username):
-    for subriber_id in subriber_ids:
-        bot.send_message(chat_id=subriber_id,
-                             text="{0} в опасности! Попробуйте связаться с ним, и если он вам не ответит, принимайте меры. Телефон ОВД-инфо: Телефон Лиза.Алерт: ".format(username))
     
 
 # приветственное сообщение
 def hello(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id,
-                             text="Привет! Через этого бота вы можете подписаться на срочные уведомления о том, что ваш друг попал в беду. Для этого введите команду /subscribe, а затем введите идентификатор этого человека. Если этот человек нажмет на свою кнопку тревоги, вам придет срочное оповещение.".format(config.name))
-
-def subscribe(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id,
-                             text="Введите личный идентификатор человека, на оповещения которого вы хотите подписаться.")
-    return "token"
-    
-def parse_token(update, context):
-
-    try:
-        core.subscribe_to_token(update.message.text, update.message.from_user.id)
-        context.bot.send_message(chat_id=update.effective_chat.id,
-                             text="Спасибо! Теперь вы подписаны на этого человека. Если с ним что-то случится, вам придет сообщение и его координаты.")
-
-    except IndexError:
-        context.bot.send_message(chat_id=update.effective_chat.id,
-                             text="Вы ввели неправильный токен. Попробуйте заново, введя команду /subscribe.")
-    #else:
-        
-    return ConversationHandler.END	
-
-
-
-
-
-# добавляем приветственное сообщение при команде старт
+                             text="Привет! Это Гретель! В случае неприятной ситуации она удалит вас из всех чатов, где она админ. Используйте команду /scan в чате чтобы запомнить/обновить список учатников чата, команду /sos чтобы удалиться из всех чатов и команду /kick @username чтобы удалить друг_ую учатни_цу чата")
 
 
 dp.add_handler(CommandHandler('start', hello))
-dp.add_handler(ConversationHandler(
-        entry_points=[CommandHandler('subscribe', subscribe)],
-
-        states={
-            "token": [MessageHandler(Filters.text, parse_token, pass_user_data=True)]
-        },
-        
-        fallbacks = []
-    ))
 
 def main():
     upd.start_polling()
